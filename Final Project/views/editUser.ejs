@@ -1,0 +1,36 @@
+<%- include('partials/header.ejs') %>
+<body class = "change">
+<br>
+<a href = "/userList" class="backSpace"> BACK </a> <br><br>
+<h1> Updating User </h1>
+<hr><br>
+<form action = "/user/edit" method = "POST" onSubmit="return validateUser()">
+
+<div id = "imageF">
+
+<div id = "imageF2">
+<input id type="hidden" name="userId" value="<%=user[0].usersId%>">
+
+Username: <input type = "text" id = "uUser" name = "username" value = "<%=user[0].username%>" ><br><br>
+
+Password: <input type = "text" id = "uPass" name = "password" value = "<%=user[0].password%>" ><br>
+
+
+</div>
+</div>
+<br>
+<button class = "update2"> Update User</button>
+</form>
+
+<div id = "mess">
+<% if(typeof message != "undefined") { %>
+<%= message %>
+<% } %>
+</div>
+
+<%- include('partials/footer.ejs') %>
+<script src='/js/validation.js'></script>
+
+</body>
+
+</html>

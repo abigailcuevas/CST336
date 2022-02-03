@@ -1,0 +1,23 @@
+<%- include('partials/header.ejs') %>
+<body>
+<div class = "imageTry">
+<br>
+<a href = "/admin" class="backSpace"> BACK </a> <br><br>
+<h1> Edit Contacts </h1>
+<hr><br>
+<div class = "change1">
+
+
+<% for(var i = 0; i < contact.length; i++){ %>
+
+<a href = "/contact/edit?contactId=<%=contact[i].contactId%>" class="update"> Update</a>
+<%= contact[i].name %>
+<br><br>
+<% } %>
+
+</div>
+<%- include('partials/footer.ejs') %>
+</div>
+</body>
+
+</html>

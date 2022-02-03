@@ -1,0 +1,58 @@
+<%- include('partials/header.ejs') %>
+<body>
+
+<div class = "sectionDivide1">
+
+<div class = "title">
+<h1> <img src="img/logo.png" width="50px" alt="logo"/> Fur & Fuzz </h1>
+</div> 
+<div class = "logInOut">
+<a href = "/login" class = "in">Admin Login</a> 
+<a href = "/logout" class = "out">Logout</a> 
+</div>
+</div>
+
+</div>
+
+
+<h6> Come find your furry friend to take home </h6>
+<hr>
+
+<div id = "backgroundI">
+
+<br><br>
+
+ <div class="card text-white bg-dark mb-3" style="max-width: 21rem;">
+ <br><br>
+  <div class="card-header">Select <strong> Go </strong> to check pets available in the following cities: </div> 
+  
+  <div class="card-body" id = "tryingOut">
+  <form method = "GET" action = "/city/pet">
+    <% for(var i = 0; i < cities.length; i++){ %>
+        <input type="checkbox" onclick="checking(this.value);" name = "cityName" class="selectOne" value="<%=cities[i].city%>" />  <%= cities[i].city %>
+
+      <br><br>   
+    <% } %>
+   
+   <button class = "loginB"> GO </button>
+
+</div>
+</div>
+
+<div class="card text-white bg-dark mb-3" style="max-width: 21rem;">
+ <br><br>
+  <div class="card-header"> Interesting facts about Cats : </div> 
+  <div class="card-body" id = "newsSection"> 
+    <div id = "bodySection"> </div>
+
+  </div>
+</div>
+
+</div>
+
+<%- include('partials/footer.ejs') %>
+
+<script src="/js/checkBox.js"></script>
+
+</body>
+</html>
